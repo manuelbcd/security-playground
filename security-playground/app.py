@@ -28,7 +28,7 @@ def exec():
 
     return process.stdout
 
-@app.route('', methods=['GET'])
+@app.route('/', methods=['GET'])
 def home():
     return '<html><body>Authenticated with success. (v. 1.0.1)</body></html>'
 
