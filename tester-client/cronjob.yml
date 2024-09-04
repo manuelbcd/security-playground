@@ -3,7 +3,7 @@ kind: CronJob
 metadata:
   name: client-cronjob
 spec:
-  schedule: "*/240 * * * *"  # This schedule runs every 30 minutes
+  schedule: "* */8 * * *"  # This schedule runs every 8 hours
   jobTemplate:
     spec:
       template:
