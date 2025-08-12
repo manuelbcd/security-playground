@@ -1,5 +1,8 @@
 #FROM python:3.7-buster
 FROM python:3.8-buster
+
+LABEL org.opencontainers.image.source="https://github.com/manuelbcd/security-playground"
+
 RUN echo Security Playground Demo App
 
 RUN pip install pipenv==2018.11.26
