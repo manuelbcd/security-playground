@@ -16,10 +16,13 @@ Or kubernetes
 # Test workload security-playground 
 kubectl create deployment playground --image=manuelbcd/security-playground:1.0.6
 
-# Expose workload with an LB
-kubectl expose deployment playground --port=80 --target-port=8080 --name=playground --type=LoadBalancer
+# Quick setup port forwarding for your local computer
+kubectl get pods -n playground -l app=playground -o jsonpath='{.items[0].metadata.name}' | xargs -I{} kubectl port-forward pod/{} -n playground 8080:8080
 # or
-# Expose workload via ClusterIP
+# Expose workload with an LB (be careful, public exposure)
+# kubectl expose deployment playground --port=80 --target-port=8080 --name=playground --type=LoadBalancer
+# or
+# Expose workload via ClusterIP (be careful, public exposure)
 # kubectl expose deployment playground --port=80 --target-port=8080 --name=playground --type=ClusterIP
 ```
 
