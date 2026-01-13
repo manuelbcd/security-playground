@@ -5,7 +5,7 @@ metadata:
     deployment.kubernetes.io/revision: "1"
   labels:
     app: playground
-  name: playground
+  name: playground1
   namespace: default
   resourceVersion: "603781"
 spec:
